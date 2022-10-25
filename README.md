@@ -27,3 +27,11 @@ Github에서 들어오는 Webhook요청이 아닌 임의의 Webhook요청으로 
 - @.setting.php > 설정데이터 저장  
 - github.webhook.php > Github Webhook 요청이 되는 파일
 - inputchk.php > 요청데이터의 Injection 공격 차단용 함수  
+  
+  
+### 다음의 정보가 필요로 합니다.
+  
+- 리포지토리 OWNER 아이디  
+- Personal access token값  
+- 리포지토리 이름  
+- 리포지토리의 Webhook secret key값  
