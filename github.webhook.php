@@ -6,23 +6,23 @@
 	include './@.setting.php';
 	
 	$rate_url = __GITHUB_API__ . '/rate_limit';
-		$header = array(
-			'Accept: application/vnd.github+json',
-			'Authorization: Bearer '.__GITHUB_TOKEN__
-		);
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, $rate_url);
-		curl_setopt($ch, CURLOPT_USERAGENT, 'dadolcorp');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 120);
-		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-		$response = curl_exec($ch);
-		curl_close($ch);
-		$response = json_decode($response, true);
-		if(isset($response['rate']['remaining'])){
-			echo substr(__GITHUB_TOKEN__,0 , 10).' 잔여호출량 : '.$response['rate']['remaining'].PHP_EOL;
-		}
+	$header = array(
+		'Accept: application/vnd.github+json',
+		'Authorization: Bearer '.__GITHUB_TOKEN__
+	);
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $rate_url);
+	curl_setopt($ch, CURLOPT_USERAGENT, 'dadolcorp');
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 120);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
+	$response = curl_exec($ch);
+	curl_close($ch);
+	$response = json_decode($response, true);
+	if(isset($response['rate']['remaining'])){
+		echo substr(__GITHUB_TOKEN__,0 , 10).' 잔여호출량 : '.$response['rate']['remaining'].PHP_EOL;
+	}
 	
 	
 	//깃허브에서 RAW파일 가져오기
