@@ -19,6 +19,7 @@ Github에서 들어오는 Webhook요청이 아닌 임의의 Webhook요청으로 
 - 파일 추가 (디렉토리 생성 포함)  
 - 파일 수정  
 - 파일 삭제 (디렉토리 파일 검사 실시하여 삭제포함)  
+- 병렬처리를 통해 대량데이터도 빠르게 반영합니다!  
   
   
   
@@ -27,6 +28,7 @@ Github에서 들어오는 Webhook요청이 아닌 임의의 Webhook요청으로 
 - @.setting.php > 설정데이터 저장  
 - github.webhook.php > Github Webhook 요청이 되는 파일
 - inputchk.php > 요청데이터의 Injection 공격 차단용 함수  
+- post_multi.php > 대량데이터를 병렬로 처리하기 위한 CURL함수  
   
   
 ### 다음의 정보가 필요로 합니다.
